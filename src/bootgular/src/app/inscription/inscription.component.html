@@ -1,0 +1,125 @@
+<div class="row ">
+  <div class= "col-sm-7 custom-row jumbotron">
+    <form novalidate
+          (ngSubmit)="onFormSubmit(signupForm)"
+          #signupForm="ngForm">
+      <fieldset>
+        <legend>Inscription</legend>
+        <div class="form-group">
+          <label for="inputNom" class="col-lg-2
+		          control-label">Nom</label>
+          <div class="col-lg-7">
+            <input type="text" class = "form-control"
+
+
+                   [ngModel] = "utilisateur.nom" name="nom"
+                   #nom = "ngModel" id="inputNom"
+                   placeholder="Nom"
+                   required>
+          </div>
+          <div class="form-group">
+            <label for="inputPrenom" class="col-lg-2
+		            control-label">Prenom</label>
+            <div class="col-lg-7">
+              <input type="text" class = "form-control"
+                     [ngModel] = "utilisateur.prenom" name="prenom"
+                     #prenom ="ngModel" id="inputPrenom"
+                     placeholder="Prenom"
+                     required>
+            </div>
+          </div>
+          <!-- Email input block -->
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2
+		        control-label">Email</label>
+            <div class="col-lg-7">
+              <input type="text" class = "form-control"
+                     [ngModel] = "utilisateur.email" name="email"
+                     #email = "ngModel" id="inputEmail"
+                     placeholder="Email"
+                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                     required>
+            </div>
+            <!-- Email error block -->
+            <div *ngIf="email.invalid && ( email.touched)"
+                 class="col-sm-3 text-danger">
+              <div *ngIf = "email.errors?.required">
+                Le champ Email ne doit pas etre vide
+              </div>
+              <div *ngIf = "email.errors?.pattern && email.touched">
+                Il faut renseigner un email valide
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-lg-2
+		      control-label">Mot de Passe</label>
+            <div class="col-lg-7">
+              <input type="password" class = "form-control"
+                     [ngModel] = "utilisateur.mdp" name="mdp"
+                     #mdp ="ngModel" id="inputPassword"
+                     placeholder="Mot de Passe"
+                     required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputTelephone" class="col-lg-2
+		      control-label">Téléphone</label>
+            <div class="col-lg-7">
+              <input type="tel" class = "form-control"
+                     [ngModel] = "utilisateur.telephone" name="telephone"
+                     #tel ="ngModel" id="inputTelephone"
+                     placeholder="Numéro"
+                     pattern="[0-9]+"
+                     required>
+            </div>
+            <!-- Tel error block -->
+            <div *ngIf="tel.invalid && ( tel.touched)"
+                 class="col-sm-3 text-danger">
+              <div *ngIf = "tel.errors?.pattern && email.touched">
+                Il faut renseigner un numéro valide
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAdresse" class="col-lg-2
+		      control-label">Adresse</label>
+            <div class="col-lg-7">
+              <input type="text" class = "form-control"
+                     [ngModel] = "utilisateur.adresse" name="adresse"
+                     #adresse ="ngModel" id="inputAdresse"
+                     placeholder="Adresse"
+                     required>
+            </div>
+          </div>
+          <br>
+          <!-- Select Actor block -->
+          <div class="form-group">
+            <label for="select" class="col-lg-2">Acteur</label>
+            <div class="col-lg-7">
+              <select id="select" class="form-control"
+                      [ngModel] = "utilisateur.acteur" name = "acteur"
+                      required>
+                <option value="">--Choisi une Option--</option>
+                <option value="administrateur">administrateur</option>
+                <option value="cultivateur">cultivateur</option>
+                <option value="agronome">ingenieur</option>
+                <option value="client">client</option>
+
+              </select>
+            </div>
+          </div>
+          <!-- Buttons block -->
+          <div class="form-group ">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="reset" class="btn btn-default">Annuler</button>
+              <button type="submit" class="btn btn-success"
+                      [disabled]="!signupForm.form.valid"> Valider
+              </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

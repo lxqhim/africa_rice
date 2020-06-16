@@ -1,0 +1,46 @@
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Utilisateurs</h3>
+      <div class="row col-md-12 col-md-offset-2 custyle">
+        <div class="input-group col-md-12" style="text-align: center">
+          <input type="text" class="search-query form-control" placeholder="Name"  name="search" [(ngModel)]="email"/>
+          <span class="input-group-btn">
+                                        <button class="btn btn-danger" type="button" (click)="findUserByName()">
+                                            <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+        </div>
+      </div>
+    </div>
+    <div class="card body">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>Identifiant</th>
+            <th>Role</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" class="text-center">
+            <td>{{user.userID}}</td>
+            <td>{{user.acteur}}</td>
+            <td>{{user.nom}}</td>
+            <td>{{user.prenom}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.telephone}}</td>
+            <td >
+              <button class="btn btn-warning">Modifier</button>
+              <button class="btn btn-danger" (click)="deleteUser(user.userID)" style="margin-left: 10px;">Supprimer</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

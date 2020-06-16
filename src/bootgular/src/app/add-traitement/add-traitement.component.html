@@ -1,0 +1,48 @@
+<div>
+  <div *ngIf="error">
+    {{ uploadResponse.message }}
+  </div>
+  <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+    <div role="progressbar" [style.width.%]="uploadResponse.message" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      {{uploadResponse.message}}%
+    </div>
+  </div>
+  </div>
+<div class="col-md-6 ">
+  <h2 class="text-center">Add Traitement</h2>
+  <form [formGroup]="uploadForm"  (ngSubmit)="onSubmit()">
+    <div >
+      <label for="d" >Date :</label>
+      <input type="date" name="d"  id="d" formControlName="d">
+    </div>
+    <div >
+      <label>Plantation :</label>
+      <select formControlName="plantation"  [(ngModel)]="plantorecover">
+        <option value= "">---</option>
+        <option *ngFor="let par of plantation " [ngValue]= par >{{ par.nom }}</option>
+      </select>
+
+    </div>
+    <div >
+      <label >Observation :</label>
+      <textarea formControlName="observation" name="observation">Observation</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="critique">Critique :</label>
+      <textarea formControlName="critique" placeholder="critique" name="critique"  id="critique">critique</textarea>
+    </div>
+
+    <div >
+      <label for="niveau">Niveau :</label>
+      <input formControlName="niveau" placeholder="niveau" name="niveau"  id="niveau">
+    </div>
+
+    <button type="submit" class="btn btn-success" >Add</button>
+  </form>
+</div>

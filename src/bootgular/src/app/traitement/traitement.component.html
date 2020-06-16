@@ -1,0 +1,34 @@
+<div class="col-md-6">
+  <h2> Registre Details</h2>
+  <button class="btn btn-danger" (click)="addTraitement()" style="margin-left: 20px;"> Add</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Date Naissance</th>
+      <th>Plantation</th>
+      <th>Observation</th>
+      <th>Critique</th>
+      <th>Niveau</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let plan of tableau">
+      <td class="hidden">{{plan}}</td>
+      <td><a class="linkText"><span class="fieldText"
+      >{{plan.date}}</span></a></td>
+      <td>{{plan.plantation.nom}}</td>
+      <td>{{plan.observation}}</td>
+      <td>{{plan.critique}}</td>
+      <td>{{plan.niveau}}</td>
+      <td>
+        <button class="btn btn-success" (click)="editTraitement(plan)" style="margin-left: 20px;"> Modifier</button>
+      </td>
+      <td>
+        <button class="btn btn-success"  style="margin-left: 20px;"> Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

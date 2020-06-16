@@ -1,0 +1,42 @@
+form {
+  margin-top: 30px;
+  margin-right: 5px;
+  margin-bottom: 50px;
+  margin-left: 0;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  border-radius: 20px!important;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  font-weight:bold;
+}
+
+label {
+  color: #333333;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 80px;
+  margin-top: 60px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+

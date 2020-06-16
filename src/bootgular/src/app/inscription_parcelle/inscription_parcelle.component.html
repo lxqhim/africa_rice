@@ -1,0 +1,101 @@
+<div class="row ">
+  <div class= "col-sm-7 custom-row jumbotron">
+    <form novalidate
+          (ngSubmit)="onSubmit()"
+           enctype="multipart/form-data">
+      <fieldset>
+        <legend>Ajout Parcelle</legend>
+
+        <!-- Adresse input block -->
+
+
+          <div class="form-group">
+            <label for="inputLongitude" class="col-lg-2
+		        control-label">Longitude</label>
+            <div class="col-lg-7">
+              <input type="text" class = "form-control"
+                     name="longitude"
+                     id="inputLongitude"
+                     placeholder="Longitude"
+                     required
+                     [(ngModel)]="parcelle.longitude">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputLatitude" class="col-lg-2
+          control-label">Latitude</label>
+            <div class="col-lg-7">
+              <input type="text" class = "form-control"
+                     name="latitude"
+                     id="inputLatitude"
+                     placeholder="Latitude"
+                     required
+              [(ngModel)]="parcelle.latitude">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="surface" class="col-lg-2
+		      control-label">Surface</label>
+            <div class="col-lg-7">
+              <input type="text"
+                     name="surface"
+                     id="surface"
+                     placeholder="Surface"
+                     required [(ngModel)]="parcelle.surface">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="acidite" class="col-lg-2
+		      control-label">Acidité</label>
+            <div class="col-lg-7">
+              <input type="text"
+                     name="acidite"
+                     id="acidite"
+                     placeholder="Acidite"
+                     required [ngModel]="parcelle.acidite">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pente" class="col-lg-2
+		      control-label">Pente</label>
+            <div class="col-lg-7">
+              <input type="text" class = "form-control"
+                     name="pente"
+                     id="pente"
+                     placeholder="Pente"
+                     required [(ngModel)]="parcelle.pente">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="select" class="col-lg-2">Argile</label>
+            <div class="col-lg-7">
+              <select id="select" class="form-control"
+                      name = "argile" [(ngModel)]="parcelle.argile"
+                      required>
+                <option ngValue="{{false}}">non</option>
+                <option ngValue="{{true}}">oui</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="select" class="col-lg-2">Ajout une photo de parcelle</label>
+            <div class="col-lg-7">
+              <input type="file" name="photo"  faccept="image/*" (change)="onFileSelect($event)">
+            </div>
+          </div>
+
+        <!-- Buttons block -->
+          <div class="form-group ">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="reset" class="btn btn-default">Annuler</button>
+              <button type="submit" class="btn btn-success">Valider</button>
+            </div>
+          </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>

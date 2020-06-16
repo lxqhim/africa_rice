@@ -1,0 +1,56 @@
+<div class="col-md-6 user-container" xmlns:th="http://www.w3.org/1999/xhtml">
+  <h2 class="text-center">Modif Plantation</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="hidden">
+      <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+    </div>
+    <div class="form-group">
+      <label for="nom">Nom:</label>plantations
+      <input type="text" formControlName="nom" placeholder="nom" name="nom" class="form-control" id="nom" >
+    </div>
+
+    <div class="form-group">
+      <label >Propriétaire :</label>
+      <select formControlName="parcelle">
+        <option value="">---</option>
+        <option *ngFor="let par of users">{{ par.nom }}</option>
+      </select>    </div>
+
+    <div class="form-group">
+      <label for="etat">État:</label>
+      <input formControlName="etat" placeholder="État" name="etat" class="form-control" id="etat">
+    </div>
+
+    <div class="form-group">
+      <label >Parcelle :</label>
+
+      <select formControlName="parcelle">
+        <option value="">---</option>
+        <option *ngFor="let par of parcelles">{{ par.photo }}</option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+      <label for="datefin">Date Fin:</label>
+      <input  placeholder="écrire la date comme une chaine de caractère" name="datefin" class="form-control" id="datefin">
+    </div>
+
+    <button class="btn btn-success" type="submit">Update</button>
+  </form>
+</div>
+
+
+<!--
+<form method="get" action="adduser">
+  <h1>Saisie d'un utilisateur</h1>
+  <label>Prénom :</label><input type="text" id="firstname" name="firstname"/><Br/>
+  <label>Nom :</label><input type="text" id="lastname" name="lastname"/><br/>
+  <select name="choosenAddress">
+    <option th:each="addr: ${addresses}" th:value="${addr.idadresse}" th:text="${addr.numero}+', rue '+${addr.rue}+' '+${addr.codePostal}+' '+${addr.ville}">Valeur 1</option>
+  </select>
+  <br/>
+  <input type='submit' name="envoyer"/>
+</form>
+-->
+

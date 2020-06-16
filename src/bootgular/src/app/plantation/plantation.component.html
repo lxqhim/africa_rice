@@ -1,0 +1,52 @@
+<!--<h2 >PLANTATIONS</h2>
+<mat-toolbar >
+  <mat-toolbar-row *ngFor="let plantation of plantationService.plantattions" >
+
+    <a class="linkText"><span class="fieldText"
+                              >{{plantation.name}}</span></a>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+(click)="editPlan(plan)"
+  <button class="btn btn-danger" style="width:100px" (click)="addPlantation()"> Add User</button>
+
+-->
+
+
+
+<div class="col-md-6">
+  <h2> Plantations Details</h2>
+  <button class="btn btn-danger" style="width:100px" (click)="addPlan()"> Add</button>
+
+  <table class="table table-striped" >
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Nom</th>
+      <th>Propretaire</th>
+      <th>État</th>
+      <th>Parcelle</th>
+      <th>Photo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let plan of plantations">
+      <td class="hidden">{{plan.planID}}</td>
+      <td><a class="linkText"><span class="fieldText"
+      >{{plan.nom}}</span></a></td>
+      <td>{{plan.proprietaire.nom}}</td>
+      <td>{{plan.etat}}</td>
+      <td>{{plan.parcelle.photo}}</td>
+      <td>{{plan.photo}}</td>
+
+      <td>
+        <button class="btn btn-success" (click)="editPlan(plan)" style="margin-left: 20px;"> Modifier</button>
+      </td>
+      <td>
+        <button class="btn btn-success"  style="margin-left: 20px;"> Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,20 @@
+<div class="card body">
+  <table class="table table-hover">
+    <thead>
+    <tr class="text-center" *ngIf="alertes">
+      <th>Expéditeur</th>
+      <th>Date</th>
+      <th>Object</th>
+      <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let alerte of alertes" class="text-center">
+      <td>{{alerte.expediteur.nom}}</td>
+      <td>{{alerte.date}}</td>
+      <td>{{alerte.object}}</td>
+      <td>{{alerte.message}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

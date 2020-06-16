@@ -1,0 +1,25 @@
+.postDecl {
+  margin-top: 10px;
+}
+
+.editLogo{
+  font-family: "Andale Mono";
+  font-size: 35px;
+  color: #4a148c;
+}
+img {
+  width: 10em;
+  height: 2.5em;
+}
+.ident {
+  color: #4649ff;
+  border-radius: 50px;
+  text-align:right;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  margin-top: 10px;
+}
+.nameIdent {
+  color: #4a148c;
+}
